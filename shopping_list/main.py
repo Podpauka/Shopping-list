@@ -1,9 +1,9 @@
 def main():
-    shopping_list = ["a", "b", "c"]
+    shopping_list = []
     print("Witaj!")
     while True:
-        option_choice = int(
-            input("Wybierz opcję: \n 1. Pokaż listę zakupów \n 2. Dodaj nowy element \n 3. Edytuj elementy"))
+        option_choice = int(input(
+            "Wybierz opcję: \n 1. Pokaż listę zakupów \n 2. Dodaj nowy element \n 3. Edytuj element \n 4. usuń element"))
         if option_choice == 1:
             if shopping_list:
                 for index, value in enumerate(shopping_list):
@@ -23,6 +23,11 @@ def main():
                 print(f"Element został edytowany na {updated_item}.")
             else:
                 print("Wskazanego numeru nie ma na liście.")
+        elif option_choice == 4:
+            choice = int(input("Podaj numer elementu, który chcesz usunąć: "))
+            chosen_item = choice - 1
+            shopping_list.remove(shopping_list[chosen_item])
+            print(f"Element został usunięty z listy.")
 
 
 main()
